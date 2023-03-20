@@ -1,6 +1,6 @@
 ## About SBot
 
-SBot is a CloudFlare worker providing bidirectional Slack <=> Github interaction with issues. It creates a thread in the specified Slack channel whenever issue created in the specified GitHub repository and updates its status in the main message. It also allows to close or reopen an issue by mentioning SBot with a text 'this is resolved' or 'reopen this' respectively.
+SBot is a Cloudflare worker providing bidirectional Slack <=> Github interaction with issues. It creates a thread in the specified Slack channel whenever issue created in the specified GitHub repository and updates its status in the main message. It also allows to close or reopen an issue by mentioning SBot with a text 'this is resolved' or 'reopen this' respectively.
 
 # Configuration
 
@@ -10,7 +10,7 @@ Copy `secrets.json.example` file in the project's root folder and rename it to `
 
 ## D1 Database
 
-Log into your CloudFlare account with `wrangler login` command.
+Log into your Cloudflare account with `wrangler login` command.
 
 Create a D1 database (replace `<DATABASE_NAME>` with desired DB name):
 
@@ -27,7 +27,7 @@ database_name = ""
 database_id = ""
 ```
 
-You can always check the name and id of your database in the 'Workers > D1' section of CloudFlare Dashboard.
+You can always check the name and id of your database in the 'Workers > D1' section of Cloudflare Dashboard.
 
 Create an empty `issues` table by executing the command below (replace `sbot-db` with the database name you used earlier). **Be careful, as it will drop any existing `issues` table in this database!**
 
