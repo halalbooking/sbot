@@ -1,6 +1,6 @@
 ## About SBot
 
-SBot is a Cloudflare worker providing bidirectional Slack <=> Github interaction with issues. It creates a thread in the specified Slack channel whenever issue created in the specified GitHub repository and updates its status in the main message. It also allows to close or reopen an issue by mentioning SBot with a text 'this is resolved' or 'reopen this' respectively.
+SBot is a Cloudflare worker providing bi-directional Slack <=> GitHub interaction with Issues. It creates a thread in the specified Slack channel whenever issue created in the specified GitHub repository and updates its status in the main message. It also allows to close or reopen an issue by mentioning SBot with a text 'this is resolved' or 'reopen this' respectively.
 
 # Configuration
 
