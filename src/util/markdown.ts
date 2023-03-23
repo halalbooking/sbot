@@ -8,8 +8,8 @@ export function convertMarkdown(content: string): string {
   const convertors = [
     convertHeaders,
     convertBoldText,
-    // convertUnorderedLists,
-    // convertLinkedTexts,
+    convertUnorderedLists,
+    convertLinkedTexts,
   ]
 
   for (let block of blocks) {
@@ -47,6 +47,15 @@ function convertBoldText(block: string): string {
   return block
 }
 
-// function convertUnorderedLists(block: string): string {}
+function convertUnorderedLists(block: string): string {
+  if (block.startsWith("- ")) {
+    block = block.replace("-", "•")
+  }
+  return block
+}
 
-// function convertLinkedTexts(block: string): string {}
+function convertLinkedTexts(block: string): string {
+  const regex = /\[(.*?)\]\((.*?)\)/g
+  block = block.replace(regex, "<$2|$1>")
+  return block
+}
