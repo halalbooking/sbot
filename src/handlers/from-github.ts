@@ -3,6 +3,7 @@ import { postNewThread, replyToThread, updateMessage } from "../util/slack"
 import { addIssue, getIssueByNumber, updateIssue } from "../db/db"
 import { Env } from ".."
 import { Issue } from "../db/db"
+import { convertMarkdown } from "../util/markdown"
 
 type GithubEvent = {
   action: string
@@ -54,10 +55,12 @@ async function handleIssueOpened(event: GithubEvent, env: Env) {
     },
   ]
 
+  const convertedBody = convertMarkdown(body)
+
   const replyBlocks = [
     {
       type: "section",
-      text: { type: "mrkdwn", text: body },
+      text: { type: "mrkdwn", text: convertedBody },
     },
   ]
 
