@@ -1,7 +1,7 @@
 export function convertMarkdown(content: string): string {
   const blocks = content.split("\r\n")
   const processed: string[] = []
-  const convertors = [
+  const converters = [
     convertItalicText,
     convertHeaders,
     convertBoldText,
@@ -14,8 +14,8 @@ export function convertMarkdown(content: string): string {
     let block = blocks[i]
     const prev = blocks[i - 1] ?? ""
     const next = blocks[i + 1] ?? ""
-    for (const convertor of convertors) {
-      block = convertor(block, prev, next)
+    for (const converter of converters) {
+      block = converter(block, prev, next)
     }
     processed.push(block)
   }
