@@ -56,13 +56,13 @@ function convertUnorderedLists(block: string, _: string, __: string): string {
 }
 
 function convertLinkedTexts(block: string, _: string, __: string): string {
-  const regex = /\[(.*?)\]\((.*?)\)/g
+  const regex = new RegExp(/\[(.*?)\]\((.*?)\)/g)
   block = block.replace(regex, "<$2|$1>")
   return block
 }
 
 function convertItalicText(block: string, _: string, __: string): string {
-  const regex = /(?<!\*)\*([^*].*?)\*/g
+  const regex = new RegExp(/(?<!\*)\*([^*].*?)\*/g)
   block = block.replace(regex, "_$1_")
   return block
 }
@@ -72,7 +72,7 @@ function convertMultilineCode(
   prev: string,
   next: string
 ): string {
-  const regex = /^\s{4}/
+  const regex = new RegExp(/^\s{4}/)
   if (!regex.test(block)) return block
 
   block = block.replace(regex, "")
