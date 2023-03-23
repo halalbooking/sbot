@@ -23,7 +23,7 @@ export function convertMarkdown(content: string): string {
 }
 
 function convertHeaders(block: string): string {
-  const regex = new RegExp(/#{1,6}\s/)
+  const regex = new RegExp(/^#{1,6}\s/)
   if (regex.test(block)) {
     block = block.replace(regex, "*")
     block += "*"
