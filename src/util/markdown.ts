@@ -1,5 +1,7 @@
 export function convertMarkdown(content: string): string {
-  const blocks = content.split("\r\n")
+  const isWinStyleNewLine = content.includes("\r\n")
+  const splitter = isWinStyleNewLine ? "\r\n" : "\n"
+  const blocks = content.split(splitter)
   const processed: string[] = []
   const converters = [
     convertItalicText,
@@ -20,7 +22,7 @@ export function convertMarkdown(content: string): string {
     processed.push(block)
   }
 
-  return processed.join("\r\n")
+  return processed.join(splitter)
 }
 
 function convertHeaders(block: string, _: string, __: string): string {
