@@ -18,7 +18,7 @@ Create a D1 database (replace `<DATABASE_NAME>` with desired DB name):
 wrangler d1 create <DATABASE_NAME>
 ```
 
-After successfull creation of the DB you'll get the values for `database_name` and `database_id`. Copy them to the corresponding fields in the `wrangler.toml` file, leaving the `binding` value as `DB`:
+After successfull creation of the DB you'll get the values for `database_name` and `database_id`. Copy them to the corresponding fields in the `wrangler.toml` file (use `wrangler.toml.example` as example), leaving the `binding` value as `DB`:
 
 ```toml
 [[ d1_databases ]]
