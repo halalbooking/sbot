@@ -68,10 +68,12 @@ Scroll down to 'Scopes'. In 'Bot Token Scopes' add the following scopes:
 - app_mentions:read
 - chat:write
 - users.profile:read
+- users:read.email
 
 In the 'User Token Scopes' add the following scope:
 
 - users.profile:read
+- users:read.email
 
 Scroll up to 'OAuth Tokens for Your Workspace' and click 'Install to Workspace'. Confirm app's permissions. Copy 'User OAuth Token' and 'Bot User OAuth Token' values to the `SLACK_USER_TOKEN` and `SLACK_BOT_TOKEN` fields respectively in the `secrets.json` file in the project folder.
 
